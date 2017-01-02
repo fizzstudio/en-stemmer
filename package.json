@@ -1,0 +1,26 @@
+{
+  "name": "en-stemmer",
+  "version": "1.0.0",
+  "description": "porter stemmer implmentation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexcorvi/en-stemmer.git"
+  },
+  "keywords": [
+    "porter",
+    "stemmer",
+    "english",
+    "word",
+    "stemming"
+  ],
+  "author": "Alex Corvi <alex@arrayy.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexcorvi/en-stemmer/issues"
+  },
+  "homepage": "https://github.com/alexcorvi/en-stemmer#readme"
+}
