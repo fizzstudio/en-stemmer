@@ -1,6 +1,6 @@
 {
   "name": "en-stemmer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "porter stemmer implmentation",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alexcorvi/en-stemmer.git"
+    "url": "git+https://github.com/finnlp/en-stemmer.git"
   },
   "keywords": [
     "porter",
@@ -20,7 +20,7 @@
   "author": "Alex Corvi <alex@arrayy.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/alexcorvi/en-stemmer/issues"
+    "url": "https://github.com/finnlp/en-stemmer/issues"
   },
-  "homepage": "https://github.com/alexcorvi/en-stemmer#readme"
+  "homepage": "https://github.com/finnlp/en-stemmer#readme"
 }
