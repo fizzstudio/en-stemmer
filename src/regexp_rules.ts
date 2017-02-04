@@ -1,0 +1,20 @@
+export const c = '[^aeiou]';			// consonant
+export const v = '[aeiouy]';			// vowel
+export const C = c + '[^aeiouy]*';		// consonant sequence
+export const V = v + '[aeiou]*';		// vowel sequence
+export const M_gr_0 		 =  	new RegExp('^(' + C + ')?' + V + C);               		// [C]VC... is m > 0
+export const M_eq_1 		 =  	new RegExp('^(' + C + ')?' + V + C + '(' + V + ')?$');	// [C]VC[V] is m=1
+export const M_gr_1 		 =  	new RegExp('^(' + C + ')?' + V + C + V + C);			// [C]VCVC... is m>1
+export const v_in_stem 	 	 =  	new RegExp('^(' + C + ')?' + v);						// vowel in stem
+export const nonstd_S 		 =  /^(.+?)(ss|i)es$/;
+export const std_S 			 =  /^(.+?)([^s])s$/;
+export const E 				 =  /^(.+?)e$/;
+export const LL 			 =  /ll$/;
+export const EED 			 =  /^(.+?)eed$/;
+export const ED_or_ING 		 =  /^(.+?)(ed|ing)$/;
+export const Y 				 =  /^(.+?)y$/;
+export const nonstd_gp1 	 =  /^(.+?)(ational|tional|enci|anci|izer|bli|alli|entli|eli|ousli|ization|ation|ator|alism|iveness|fulness|ousness|aliti|iviti|biliti|logi)$/;
+export const nonstd_gp2 	 =  /^(.+?)(icate|ative|alize|iciti|ical|ful|ness)$/;
+export const nonstd_gp3 	 =  /^(.+?)(al|ance|ence|er|ic|able|ible|ant|ement|ment|ent|ou|ism|ate|iti|ous|ive|ize)$/;
+export const S_or_T_with_ION =  /^(.+?)(s|t)(ion)$/;
+export const has_C_and_v_but_doesnt_end_with_AEIOUWXY =  new RegExp('^' + C + v + '[^aeiouwxy]$');
