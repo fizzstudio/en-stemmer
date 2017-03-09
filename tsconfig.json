@@ -5,7 +5,11 @@
         "removeComments": true,
         "preserveConstEnums": true,
         "outDir": "./dist/",
-        "declaration":true
+        "target":"ES6",
+        "declaration":true,
+        "strictNullChecks":true,
+        "alwaysStrict":true,
+        "forceConsistentCasingInFileNames":true
     },
     "files": [
         "./src/index.ts"
