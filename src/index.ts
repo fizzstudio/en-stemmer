@@ -35,24 +35,24 @@ export const stemmer = function (w:string):string {
 
 	// Step 2 -----------------------------------------
 	if (regExps.nonstd_gp1.test(w)) {
-		let result = regExps.nonstd_gp1.exec(w);
-		let stem = result[1];
-		let suffix = result[2];
+		var result = regExps.nonstd_gp1.exec(w) || [];
+		var stem = result[1];
+		var suffix = result[2];
 		if (regExps.M_gr_0.test(stem)) w = stem + suffixList.suffixList.group1[suffix];
 	}
 
 	// Step 3 -----------------------------------------
 	if (regExps.nonstd_gp2.test(w)) {
-		let result = regExps.nonstd_gp2.exec(w);
-		let stem = result[1];
-		let suffix = result[2];
+		var result = regExps.nonstd_gp2.exec(w) || [];
+		var stem = result[1];
+		var suffix = result[2];
 		if (regExps.M_gr_0.test(stem)) w = stem + suffixList.suffixList.group2[suffix];
 	}
 
 	// Step 4 -----------------------------------------
 	if (regExps.nonstd_gp3.test(w)) {
-		let result = regExps.nonstd_gp3.exec(w);
-		let stem = result[1];
+		var result = regExps.nonstd_gp3.exec(w) || [];
+		var stem = result[1];
 		if (regExps.M_gr_1.test(stem)) w = stem;
 	}
 	else if (regExps.S_or_T_with_ION.test(w)) {
@@ -63,8 +63,8 @@ export const stemmer = function (w:string):string {
 
 	// Step 5 -----------------------------------------
 	if (regExps.E.test(w)) {
-		let result = regExps.E.exec(w);
-		let stem = result[1];
+		var result = regExps.E.exec(w) || [];
+		var stem = result[1];
 		if (regExps.M_gr_1.test(stem) || (regExps.M_eq_1.test(stem) && !(regExps.has_C_and_v_but_doesnt_end_with_AEIOUWXY.test(stem)))) w = stem;
 	}
 
@@ -75,3 +75,4 @@ export const stemmer = function (w:string):string {
 	return w;
 };
 
+export default stemmer;
