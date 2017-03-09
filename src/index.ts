@@ -13,12 +13,12 @@ export const stemmer = function (w:string):string {
 	// STEP 1.b -----------------------------------------
 	// When it ends with "eed" & the stem confirms with M_gr_0
 	if (regExps.EED.test(w)) {
-		let stem = (regExps.EED.exec(w) || [])[1];
+		var stem = (regExps.EED.exec(w) || [])[1];
 		if (regExps.M_gr_0.test(w)) w = w.substr(0,w.length-1);
 	}
 
 	else if (regExps.ED_or_ING.test(w)) {
-		let stem = (regExps.ED_or_ING.exec(w) || [])[1];
+		var stem = (regExps.ED_or_ING.exec(w) || [])[1];
 		if (regExps.v_in_stem.test(stem)) {
 			w = stem;
 			if (/(at|bl|iz)$/.test(w)) w = w + 'e';
@@ -29,7 +29,7 @@ export const stemmer = function (w:string):string {
 
 	// STEP 1.c -----------------------------------------
 	if (regExps.Y.test(w)) {
-		let stem = (regExps.Y.exec(w) || [])[1];
+		var stem = (regExps.Y.exec(w) || [])[1];
 		if (regExps.v_in_stem.test(stem)) w = stem + 'i';
 	}
 
