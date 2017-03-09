@@ -6,11 +6,11 @@ const stemmer = function (w:string):string {
 	if(w.length < 3) return w;
 	if(w.charAt(0) === "y") w = w.charAt(0).toUpperCase() + w.substr(1);
 
-	// STEIP 1.a -----------------------------------------
+	// STEP 1.a -----------------------------------------
 	if (regExps.nonstd_S.test(w)) w = w.replace(regExps.nonstd_S,'$1$2');
 	else if (regExps.std_S.test(w)) w = w.replace(regExps.std_S,'$1$2');
 
-	// STEIP 1.b -----------------------------------------
+	// STEP 1.b -----------------------------------------
 	// When it ends with "eed" & the stem confirms with M_gr_0
 	if (regExps.EED.test(w)) {
 		let stem = (regExps.EED.exec(w) || [])[1];
@@ -27,7 +27,7 @@ const stemmer = function (w:string):string {
 		}
 	}
 
-	// STEIP 1.c -----------------------------------------
+	// STEP 1.c -----------------------------------------
 	if (regExps.Y.test(w)) {
 		let stem = (regExps.Y.exec(w) || [])[1];
 		if (regExps.v_in_stem.test(stem)) w = stem + 'i';
