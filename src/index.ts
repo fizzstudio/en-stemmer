@@ -56,8 +56,8 @@ export const stemmer = function (w:string):string {
 		if (regExps.M_gr_1.test(stem)) w = stem;
 	}
 	else if (regExps.S_or_T_with_ION.test(w)) {
-		let result = regExps.S_or_T_with_ION.exec(w);
-		let stem = result[1] + result[2];
+		var result = regExps.S_or_T_with_ION.exec(w) || [];
+		var stem = result[1] + result[2];
 		if (regExps.M_gr_1.test(stem)) w = stem;
 	}
 
