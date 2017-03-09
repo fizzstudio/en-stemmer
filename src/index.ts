@@ -1,7 +1,7 @@
 import * as regExps from "./regexp_rules";
 import * as suffixList from "./suffix_list";
 
-const stemmer = function (w:string):string {
+export const stemmer = function (w:string):string {
 
 	if(w.length < 3) return w;
 	if(w.charAt(0) === "y") w = w.charAt(0).toUpperCase() + w.substr(1);
@@ -75,4 +75,3 @@ const stemmer = function (w:string):string {
 	return w;
 };
 
-export {stemmer};
