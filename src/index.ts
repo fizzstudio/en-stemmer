@@ -13,12 +13,12 @@ export const stemmer = function (w:string):string {
 	// STEP 1.b -----------------------------------------
 	// When it ends with "eed" & the stem confirms with M_gr_0
 	if (regExps.EED.test(w)) {
-		var stem = (regExps.EED.exec(w) || [])[1];
+		//const stem = (regExps.EED.exec(w) || [])[1];
 		if (regExps.M_gr_0.test(w)) w = w.substr(0,w.length-1);
 	}
 
 	else if (regExps.ED_or_ING.test(w)) {
-		var stem = (regExps.ED_or_ING.exec(w) || [])[1];
+		const stem = (regExps.ED_or_ING.exec(w) || [])[1];
 		if (regExps.v_in_stem.test(stem)) {
 			w = stem;
 			if (/(at|bl|iz)$/.test(w)) w = w + 'e';
@@ -29,42 +29,42 @@ export const stemmer = function (w:string):string {
 
 	// STEP 1.c -----------------------------------------
 	if (regExps.Y.test(w)) {
-		var stem = (regExps.Y.exec(w) || [])[1];
+		const stem = (regExps.Y.exec(w) || [])[1];
 		if (regExps.v_in_stem.test(stem)) w = stem + 'i';
 	}
 
 	// Step 2 -----------------------------------------
 	if (regExps.nonstd_gp1.test(w)) {
-		var result = regExps.nonstd_gp1.exec(w) || [];
-		var stem = result[1];
-		var suffix = result[2];
+		const result = regExps.nonstd_gp1.exec(w) || [];
+		const stem = result[1];
+		const suffix = result[2];
 		if (regExps.M_gr_0.test(stem)) w = stem + suffixList.suffixList.group1[suffix];
 	}
 
 	// Step 3 -----------------------------------------
 	if (regExps.nonstd_gp2.test(w)) {
-		var result = regExps.nonstd_gp2.exec(w) || [];
-		var stem = result[1];
-		var suffix = result[2];
+		const result = regExps.nonstd_gp2.exec(w) || [];
+		const stem = result[1];
+		const suffix = result[2];
 		if (regExps.M_gr_0.test(stem)) w = stem + suffixList.suffixList.group2[suffix];
 	}
 
 	// Step 4 -----------------------------------------
 	if (regExps.nonstd_gp3.test(w)) {
-		var result = regExps.nonstd_gp3.exec(w) || [];
-		var stem = result[1];
+		const result = regExps.nonstd_gp3.exec(w) || [];
+		const stem = result[1];
 		if (regExps.M_gr_1.test(stem)) w = stem;
 	}
 	else if (regExps.S_or_T_with_ION.test(w)) {
-		var result = regExps.S_or_T_with_ION.exec(w) || [];
-		var stem = result[1] + result[2];
+		const result = regExps.S_or_T_with_ION.exec(w) || [];
+		const stem = result[1] + result[2];
 		if (regExps.M_gr_1.test(stem)) w = stem;
 	}
 
 	// Step 5 -----------------------------------------
 	if (regExps.E.test(w)) {
-		var result = regExps.E.exec(w) || [];
-		var stem = result[1];
+		const result = regExps.E.exec(w) || [];
+		const stem = result[1];
 		if (regExps.M_gr_1.test(stem) || (regExps.M_eq_1.test(stem) && !(regExps.has_C_and_v_but_doesnt_end_with_AEIOUWXY.test(stem)))) w = stem;
 	}
 
