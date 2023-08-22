@@ -1,5 +1,5 @@
-import * as regExps from "./regexp_rules";
-import * as suffixList from "./suffix_list";
+import * as regExps from "./regexp_rules.js";
+import * as suffixList from "./suffix_list.js";
 
 export const stemmer = function (w:string):string {
 
